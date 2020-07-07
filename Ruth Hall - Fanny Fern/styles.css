@@ -1,0 +1,325 @@
+@charset utf-8;
+/* Ruth Hall by Fanny Fern, edited by Paul L. Hebert (Queens College, CUNY). 
+
+This style sheet is based on the CUNY Student Editions free-to-use style sheet: https://github.com/CUNY-Student-Editions/style-sheet
+
+This style sheet is free to use from CUNY Student Editions */
+
+/* BASIC SETTINGS: Cutomize reading experience such as default fonts, line heights, text size. Many of these settings can be overrided by ereaders. */
+body {
+  display: block;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  line-height: 1.5em;
+  margin: 2em auto 3em;
+  padding: 0 1.5em 0;
+}
+h1, h2, h3, h4 {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2em;
+}
+h1 {
+  font-size: 2em;
+  font-variant: small-caps;
+  line-height: 1em;
+  margin: 0.67em 0;
+}
+h2 {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+  line-height: 1.2em;
+}
+h3 {
+  font-size: 1.17em;
+  font-style: italic;
+  font-weight: normal;
+  margin: 1em 0 2em;
+}
+h4 {
+  font-size: 1em;
+  margin: 1.33em 0;
+}
+.sub-heading {
+  font-style: italic;
+  font-size: 1.17em;
+  font-weight: inherit;
+  margin: 0 auto 1em;
+}
+p {
+  font-size: 1em;
+  text-indent: 2em;
+  margin: 0 auto 1em;
+}
+
+/* TITLE PAGE */
+.main-title {
+  font-size: 3.5em;
+  line-height: 1em;
+}
+.subtitle {
+  font-size: 1.5em;
+  line-height: 1.25em;
+  margin: -0.5em auto 1em;
+  max-width: 80%;
+}
+.cover-description	{
+  max-width: 70%;
+}
+img.cover-image {
+  margin: 0 auto 0;
+}
+.author {
+  font-size: 2em;
+  font-weight: 700;
+  font-style: italic;
+  margin: 0 auto 1em;
+}
+.imprint {
+  display: block;
+  margin: 1em auto 0.5em;
+  width: 8em;
+}
+.banner {
+  border-top: 0.2em double;
+  border-bottom: 0.2em double;
+  font-size: 1em;
+  text-align: center;
+  text-indent: 0;
+}
+
+/* ABOUT THE TEXT: A unique page for CUNY Student Editions with standard styling. */
+.about-block > hr {
+  max-width: 25%;
+  margin: 1.5em auto;
+}
+p.motto {
+  font-size: 1.2em;
+  font-style: italic;
+  line-height: 1.5em;
+  text-align: center;
+  text-indent: 0;
+}
+img.editor-pic {
+  display: block;
+  float: left;
+  padding-right: 1em;
+  width: 8em;
+}
+
+/* TABLE OF CONTENTS: An ordered list with links. This version uses roman numerals and regular spacing. */
+ol.contents {
+    list-style-type: none;
+    counter-reset: TOCcounter;
+    padding-left: 0;
+  }
+.contents > li:before {
+    content:  "Chapter " counter(TOCcounter, upper-roman) "\A";
+    counter-increment: TOCcounter;
+    font-weight: bold;
+    margin-bottom: 2em;
+    white-space: pre;
+  }
+  .contents > li:after {content: "\A\A"; white-space:pre;}
+
+/* IN-LINE TEXT MANIPULATION: Use these element types to achieve specific presentation goals but which may not have significant meaning beyond decoration. For example, if the text has chapter headings in all-caps, then chapter titles might be coded <h1 class="all-caps">Chapter 1</h1> 
+
+NOTE: For acessibility <em> (emphasis) and <strong> are preferred to <i> and <b>, respectively, because they are descritive of semantic meaning as opposed to visual description..*/
+p.no-indent {
+  text-indent: 0;
+}
+.all-caps {
+  text-transform: uppercase;
+  font-style: normal;
+}
+.centered {
+  text-align: center;
+}
+.right-justify	{
+  text-align: right;
+  }
+b, strong, span.bold {
+  font-weight: 700;
+}
+i, em, .italics {
+  font-style: italic;
+  font-weight: 400;
+}
+.small-caps {
+  font-variant: small-caps;
+  font-style: normal;
+}
+
+/* DOCUMENT TYPES: General descriptions of the parts of a text used to wrap sections. */
+div.section, div.chapter, div.article {
+  display: block;
+  margin-bottom: 2em;
+}
+
+/* BLOCK QUOTATIONS: Used to designate  */
+div.block-quote {
+  font-size: 1em;
+  margin: 1em 4em 0 4em;
+  max-width: 85%;
+}
+.block-quote > p {
+  text-indent: 0;
+}
+
+/* POEMS: Wrap poems in <div class="poem"> tags and <div class="stanza"> tags when appropriate.Treat lines as <p> to allow for hanging indents when text is re-sized.*/
+div.poem {
+  display: block;
+  margin: 1em auto;
+}
+.poem h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  text-align: center;
+}
+.poem h2 {
+  font-size: 1em;
+  font-weight: 700;
+  text-align: center;
+}
+div.stanza	{
+  margin-bottom: 1.25em;
+}
+div.stanza > p {
+  display: block;
+  margin: 0 4em 0em 4em;
+  text-align: left;
+  text-indent: -1em;
+  padding-left: 1em;
+  white-space: pre-wrap;
+}
+div.stanza-italics > p {
+  display: block;
+  margin: 0 20% 0 20%;
+  text-align: left;
+  text-indent: -1em;
+  padding-left: 1em;
+  white-space: pre-wrap;
+}
+div.stanza-italics em {
+  font-style: normal;
+  text-indent: -1em;
+}
+
+/* LETTERS: Enclose the entire letter in a <div class="letter"></div> tag. Lable the parts for unique styling*/
+div.letter {
+  padding-bottom: 2em;
+}
+.letter > h1 {
+  font-variant: small-caps;
+  margin-bottom: 0em;
+}
+.salutation {
+  font-style: italic;
+  text-indent: 0em;
+  margin-bottom: 1em;
+}
+.complimentary-close {
+  margin-left: 30%;
+}
+.signature {
+  margin-bottom: 1em;
+  text-align: right;
+}
+
+/* FOOTNOTES: Include footnotes in a <section role="doc-endnotes"> tag. Order notes in a list. Each <li> item needs < role="doc-endnote" id=@@> and end with this return link: &emsp; <a href="#ref-@@">Back</a>. linked phrase preferred over linked superscript character. Include in reference <a> tag: id="ref-##" href="note-##". At the page bottom, include the <div class="
+*/
+[role="doc-endnotes"], section.endnotes {
+  border-top: 1px solid black;
+  margin: 1.5em 2em 0 0;
+  padding-top: 1.5em;
+}
+mark, mark.reference {
+  background-color: transparent;
+  font-size: smaller;
+  vertical-align: super;
+}
+.footnotes > p {
+  margin-bottom: 1em;
+}
+.work-cited, .hanging-indent {
+  padding-bottom: 1em;
+  padding-left: 2em;
+  text-indent: -2em;
+}
+li[role="doc-endnote"] {
+  text-indent: 0;
+  margin-bottom: 1.5em;
+}
+cite {
+  font-style: normal;
+}
+
+/* BREAKS: Use these element types when space is used to denote a break in the text. 
+
+Also,the <br/> tags to create a hard line break inside a paragraph or heading. Sometimes it's used in poetry or as part of a signature to include a title. */
+div.small-break {
+  padding-top: 1em;
+}
+div.large-break {
+  padding-top: 3em;
+  }
+div.transition {
+  border-top: thick double;
+  margin: 1em auto;
+  height: 0em; 
+  max-width: 35%; 
+}
+div.transition2 {
+  border-top: thin solid;
+  margin: 1em auto;
+  height: 0em; 
+  max-width: 25%; 
+}
+.page-break {
+  page-break-before: always;
+}
+
+/* OTHER COMMON TEXT SECTIONS */
+.rubric	{
+  font-size: .9em;
+}
+.epigraph {
+  max-width: 70%
+}
+
+/* NESTED MODIFICATION: This section includes styling for special nested cases. For example, the title a scholarly monograph should be styled with <em> for italics, but if the title contains the title of a novel, that novel's title should *not* appear in italics. One of the elements below specicially refers to <em> tags *inside* other <em> tags, as would be the case in the example. */
+span.first-word {
+  font-variant: small-caps;
+}
+
+strong > em, h3.subtitle > strong {
+  font-variant: small-caps;
+}
+h2.subtitle > em {
+  font-variant: small-caps;
+  font-weight: bold;
+}
+strong.clear, em.clear {
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+}
+
+/* RUTH HALL CUSTOM STYLES: These are unique to this text. */
+.stock-certificate {
+  border-style: dotted;
+  margin: 1.5em 2em;
+  padding: 0em 1em;
+  }
+.stock-header {
+  border-bottom: dotted;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: .5em 0;
+  }
+.stock-footer {
+  border-top: dotted;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: .5em 0;
+  }
