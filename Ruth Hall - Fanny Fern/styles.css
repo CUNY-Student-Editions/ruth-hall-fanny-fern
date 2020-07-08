@@ -52,7 +52,7 @@ p {
   margin: 0 auto 1em;
 }
 
-/* TITLE PAGE */
+/* TITLE PAGE: These classes are applied to the usual headings to describe each line's role in the text. The title of the text is <h1 class="main-title"></h1>. Other elements of the title page are ordered appropriates. For example, if there is a subtitle, it is <h2 class="subtitle"></h2>. If there is no subtitle, perhaps the author's name is <h2 class="author"></h2>. */
 .main-title {
   font-size: 3.5em;
   line-height: 1em;
